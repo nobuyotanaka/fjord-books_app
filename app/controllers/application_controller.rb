@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
 
 end
