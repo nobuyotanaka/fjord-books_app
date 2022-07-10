@@ -19,3 +19,6 @@
   <%= @user.introduction %>
 </p>
 
+
+<%= link_to User.human_attribute_name(:edit), edit_user_registration_path %>
+<%= link_to User.human_attribute_name(:logout), destroy_user_session_path, method: :delete %>
