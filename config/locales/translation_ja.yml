@@ -15,4 +15,6 @@ ja:
         zipcode: 郵便番号
         address: 住所
         introduction: 自己紹介
+        edit: 編集する
+        logout: ログアウトする
         
