@@ -1,21 +1,21 @@
 
 <p>
-  <strong><%= "email" %>:</strong>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong><%= "zipcode" %>:</strong>
+  <strong><%= User.human_attribute_name(:zipcode) %>:</strong>
   <%= @user.zipcode %>
 </p>
 
 <p>
-  <strong><%= "address" %>:</strong>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
   <%= @user.address %>
 </p>
 
 <p>
-  <strong><%= "introduction" %>:</strong>
+  <strong><%= User.human_attribute_name(:introduction) %>:</strong>
   <%= @user.introduction %>
 </p>
 
