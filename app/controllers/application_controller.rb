@@ -7,14 +7,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  #新規登録が可能なパラメータ
+  # 新規登録が可能なパラメータ
   def configure_permitted_parameters_signup
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :zipcode, :address, :introduction])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name zipcode address introduction])
   end
 
-
-  #編集が可能なパラメータ
+  # 編集が可能なパラメータ
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :zipcode, :address, :introduction])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name zipcode address introduction])
   end
 end
