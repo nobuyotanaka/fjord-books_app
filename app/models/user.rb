@@ -15,4 +15,16 @@ class User < ApplicationRecord
 
   has_many :followings, through: :following_relationships, source: :follower
   has_many :followers, through: :follower_relationships, source: :following
+
+#-----------------
+#　method
+#-----------------
+  
+  # フォローしたときの処理
+  def follow(user_id)
+    following_relationships.create(follower_id: user.id)
+  end
+
+
+
 end
