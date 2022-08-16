@@ -25,6 +25,10 @@ class User < ApplicationRecord
     following_relationships.create(follower_id: user.id)
   end
 
+  # フォローしているか否かを確認
+  def following?(user)
+    followings.include?(user)
+  end
 
 
 end
