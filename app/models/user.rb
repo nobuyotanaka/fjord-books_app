@@ -30,5 +30,9 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
+  # フォローをやめるときの処理
+  def unfollow(user_id)
+    following_relationships.find_by(follower_id: user_id).destroy
+  end
 
 end
