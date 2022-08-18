@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     member do # idを付ける
       get :followings, :followers
     end
+    resources :follow_relationships, only: %i[create destroy]
   end
 end
