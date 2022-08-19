@@ -6,20 +6,20 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-#-----------------
-#　relations
-#-----------------
+  #-----------------
+  # 　relations
+  #-----------------
 
-  has_many :following_relationships, class_name: 'FollowRelationship', foreign_key: 'following_id', dependent: :destroy
-  has_many :follower_relationships, class_name: 'FollowRelationship', foreign_key: 'follower_id', dependent: :destroy
+  has_many :following_relationships, class_name: 'FollowRelationship', foreign_key: 'following_id', dependent: :destroy, inverse_of: :following
+  has_many :follower_relationships, class_name: 'FollowRelationship', foreign_key: 'follower_id', dependent: :destroy, inverse_of: :follower
 
   has_many :followers, through: :following_relationships, source: :follower
   has_many :followings, through: :follower_relationships, source: :following
 
-#-----------------
-#　method
-#-----------------
-  
+  #-----------------
+  # 　method
+  #-----------------
+
   # フォローしたときの処理
   def follow(user_id)
     follower_relationships.create!(following_id: user_id)
@@ -34,5 +34,4 @@ class User < ApplicationRecord
   def unfollow(user_id)
     follower_relationships.find_by(following_id: user_id).destroy
   end
-
 end
