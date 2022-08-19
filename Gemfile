@@ -35,6 +35,7 @@ end
 
 group :development do
   gem 'faker'
+  gem 'erb_lint', require: false
   gem 'i18n_generators'
   gem 'letter_opener_web'
   gem 'listen', '~> 3.3'
@@ -63,6 +64,5 @@ gem 'net-smtp'
 gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
-gem 'erb_lint'
 gem 'image_processing', '~> 1.2'
 gem 'kaminari'
