@@ -29,7 +29,7 @@
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
   <% if @user.avatar.attached? %>
     <br>
-    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
+    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150]) %>
   <% end %>
 </p>
 
@@ -40,8 +40,6 @@
 <p>
   <%= link_to "#{@user.followers.count} #{"フォロワー"}", followers_user_path %>
 </p>
-
-
 
 <p>
 <% if current_user.following?(@user) %>
