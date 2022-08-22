@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  comment: MyText
+  contents: MyText
   user: one
 
 two:
   title: MyString
-  comment: MyText
+  contents: MyText
   user: two

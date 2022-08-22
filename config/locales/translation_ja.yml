@@ -18,6 +18,6 @@ ja:
         avatar: ユーザ画像
       report:
         title: タイトル
-        comment: 本文
+        contents: 本文
         user: 投稿者
         created_at: 投稿日時

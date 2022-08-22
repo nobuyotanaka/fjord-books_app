@@ -14,7 +14,7 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on "New Report"
 
-    fill_in "Comment", with: @report.comment
+    fill_in "Contents", with: @report.contents
     fill_in "Title", with: @report.title
     fill_in "User", with: @report.user_id
     click_on "Create Report"
@@ -27,7 +27,7 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on "Edit", match: :first
 
-    fill_in "Comment", with: @report.comment
+    fill_in "Contents", with: @report.contents
     fill_in "Title", with: @report.title
     fill_in "User", with: @report.user_id
     click_on "Update Report"
