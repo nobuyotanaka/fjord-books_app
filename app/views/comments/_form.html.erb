@@ -1,0 +1,32 @@
+<h2><%= Comment.model_name.human %></h2>
+
+<%= form_with(model: [commentable, comment]) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% commentable.comments.includes(:user).each do |comment| %>
+    <p>
+      <%= comment.contents %>
+      <%= comment.user.name_or_email %>
+      <%= comment.created_at %>
+    </p>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :contents %>
+    <%= form.text_area :contents, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
