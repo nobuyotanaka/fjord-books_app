@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :books
   resources :users, only: %i(index show) do
-    member do # idを付ける
+    member do
       get :followings, :followers
     end
     resources :follow_relationships, only: %i[create destroy]
