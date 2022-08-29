@@ -13,9 +13,17 @@
     </div>
   <% end %>
 
+  <% commentable.comments.includes(:user).each do |comment| %>
+    <p>
+      <%= comment.contents %>
+      <%= comment.user.name_or_email %>
+      <%= comment.created_at %>
+    </p>
+  <% end %>
+
   <div class="field">
     <%= form.label :contents %>
-    <%= form.text_area :contents %>
+    <%= form.text_area :contents, required: true %>
   </div>
 
   <div class="actions">
