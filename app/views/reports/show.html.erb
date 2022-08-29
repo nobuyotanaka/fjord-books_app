@@ -22,7 +22,6 @@
 
 <%= render partial: "comments/form", locals: { commentable: @report, comment: @report.comments.new } %>
 
-
 <% if @report.user == current_user %>
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>
