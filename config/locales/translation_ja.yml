@@ -3,6 +3,8 @@ ja:
     models:
       book: 本  #g
       user: ユーザ
+      report: 日報
+      comment: コメント
 
     attributes:
       book:
@@ -21,3 +23,5 @@ ja:
         contents: 本文
         user: 投稿者
         created_at: 投稿日時
+      comment:
+        contents: コメント内容
