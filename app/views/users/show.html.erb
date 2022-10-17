@@ -34,16 +34,16 @@
 </p>
 
 <p>
-  <%= link_to "#{@user.followings.count} #{"フォロー中"}", followings_user_path %>
+  <%= link_to "#{@user.followings.count} #{t('views.common.followings')}", followings_user_path %>
 </p>
 
 <p>
-  <%= link_to "#{@user.followers.count} #{"フォロワー"}", followers_user_path %>
+  <%= link_to "#{@user.followers.count} #{t('views.common.followers')}", followers_user_path %>
 </p>
 
 <p>
-<% if current_user.following?(@user) %>
-  <%= form_with(url: user_follow_relationship_path(@user), method: :delete, local: true) do |f| %>
+<% if @follow_relationship %>
+  <%= form_with(model: [@user, @follow_relationship], method: :delete, local: true) do |f| %>
     <%= f.submit t('.destroy') %>
   <% end %>
 <% elsif current_user != @user %>

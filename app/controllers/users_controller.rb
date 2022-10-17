@@ -8,15 +8,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @follow_relationship = FollowRelationship.find_by(following: current_user, follower: @user)
   end
 
   def followings
-    @followings = @user.followings
+    # userがフォローしている人達
+    @followings = @user.followings.with_attached_avatar
   end
 
   def followers
-    @followers = @user.followers
+    # userをフォローしている人達
+    @followers = @user.followers.with_attached_avatar
   end
 
   private
