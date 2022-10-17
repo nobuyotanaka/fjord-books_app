@@ -1,0 +1,13 @@
+<h1><%= t('views.common.followers', name: User.model_name.human) %></h1>
+
+<table>
+  <thead>
+    <%= render 'follow_title' %>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'follow_members', collection: @followers, as: :user %>
+  </tbody>
+</table>
+
+<%= link_to t('views.common.back'), user_path %>

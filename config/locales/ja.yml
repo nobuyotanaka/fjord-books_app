@@ -216,6 +216,8 @@ ja:
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
       title_show: "%{name}の詳細"
+      followings: フォロー中
+      followers: フォロワー
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
     pagination:
@@ -224,6 +226,10 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+  users:
+    show:
+      create: フォローする
+      destroy: フォロー解除する
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
